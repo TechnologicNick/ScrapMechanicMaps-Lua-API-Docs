@@ -19,7 +19,7 @@ Events for communicating between scripts by running callbacks.
 sm.event.sendToCharacter( character, callback, data )
 ```
 
-Sends an event to the specified [Character](/lua/Game-Script-Environment/Userdata/Character)'s script.
+Sends an event to the specified [Character](/lua/Game-Script-Environment/Userdata/Character)'s script. <br></br>
 The callback function is executed in the next Lua tick.
 
 <strong>Arguments:</strong> <br></br>
@@ -40,7 +40,7 @@ The callback function is executed in the next Lua tick.
 sm.event.sendToGame( callback, data )
 ```
 
-Sends an event to the game script.
+Sends an event to the game script. <br></br>
 The callback function is executed in the next Lua tick.
 
 <strong>Arguments:</strong> <br></br>
@@ -60,7 +60,7 @@ The callback function is executed in the next Lua tick.
 sm.event.sendToHarvestable( harvestable, callback, data )
 ```
 
-Sends an event to the specified [harvestable](/lua/Game-Script-Environment/Userdata/Harvestable)'s script.
+Sends an event to the specified [harvestable](/lua/Game-Script-Environment/Userdata/Harvestable)'s script. <br></br>
 The callback function is executed in the next Lua tick.
 
 <strong>Arguments:</strong> <br></br>
@@ -81,7 +81,7 @@ The callback function is executed in the next Lua tick.
 sm.event.sendToInteractable( interactable, callback, data )
 ```
 
-Sends an event to the specified [interactable](/lua/Game-Script-Environment/Userdata/Interactable)'s script.
+Sends an event to the specified [interactable](/lua/Game-Script-Environment/Userdata/Interactable)'s script. <br></br>
 The callback function is executed in the next Lua tick.
 
 <strong>Arguments:</strong> <br></br>
@@ -102,7 +102,7 @@ The callback function is executed in the next Lua tick.
 sm.event.sendToPlayer( player, callback, data )
 ```
 
-Sends an event to the specified [player](/lua/Game-Script-Environment/Userdata/Player)'s script.
+Sends an event to the specified [player](/lua/Game-Script-Environment/Userdata/Player)'s script. <br></br>
 The callback function is executed in the next Lua tick.
 
 <strong>Arguments:</strong> <br></br>
@@ -123,7 +123,7 @@ The callback function is executed in the next Lua tick.
 sm.event.sendToScriptableObject( scriptableObject, callback, data )
 ```
 
-Sends an event to the specified [scriptableObject](/lua/Game-Script-Environment/Userdata/ScriptableObject)'s script.
+Sends an event to the specified [scriptableObject](/lua/Game-Script-Environment/Userdata/ScriptableObject)'s script. <br></br>
 The callback function is executed in the next Lua tick.
 
 <strong>Arguments:</strong> <br></br>
@@ -144,7 +144,7 @@ The callback function is executed in the next Lua tick.
 sm.event.sendToTool( tool, callback, data )
 ```
 
-Sends an event to the specified [tool](/lua/Game-Script-Environment/Userdata/Tool)'s script.
+Sends an event to the specified [tool](/lua/Game-Script-Environment/Userdata/Tool)'s script. <br></br>
 The callback function is executed in the next Lua tick.
 
 <strong>Arguments:</strong> <br></br>
@@ -165,7 +165,7 @@ The callback function is executed in the next Lua tick.
 sm.event.sendToUnit( unit, callback, data )
 ```
 
-Sends an event to the specified [unit](/lua/Game-Script-Environment/Userdata/Unit)'s script.
+Sends an event to the specified [unit](/lua/Game-Script-Environment/Userdata/Unit)'s script. <br></br>
 The callback function is executed in the next Lua tick.
 
 <strong>Arguments:</strong> <br></br>
@@ -186,7 +186,7 @@ The callback function is executed in the next Lua tick.
 sm.event.sendToWorld( world, callback, data )
 ```
 
-Sends an event to the specified [world](/lua/Game-Script-Environment/Userdata/World)'s script.
+Sends an event to the specified [world](/lua/Game-Script-Environment/Userdata/World)'s script. <br></br>
 The callback function is executed in the next Lua tick.
 
 <strong>Arguments:</strong> <br></br>
