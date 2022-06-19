@@ -1168,7 +1168,7 @@ Sets the name tag display value for the character.
 ### setWorldPosition
 
 ```lua
-character:setWorldPosition( name, position )
+character:setWorldPosition( position )
 ```
 <code>Server-Only</code> <br></br>
 

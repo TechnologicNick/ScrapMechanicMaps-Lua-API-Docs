@@ -19,7 +19,7 @@ The JSON library is used for reading and writing data from/to JSON files.
 sm.json.fileExists( file )
 ```
 
-Returns whether a JSON file exists at the given path.
+Returns whether any file *or* folder exists at the given path.
 
 <strong>Arguments:</strong> <br></br>
 
