@@ -241,6 +241,22 @@ Returns the joint's color.
 
 ---
 
+### setColor
+
+```lua
+joint:setColor( color )
+```
+<code>Server-Only</code> <br></br>
+
+Sets the joint's color.
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>joint</code> [<strong> joint </strong>]: The joint.
+- <code>color</code> [<strong> color </strong>]: The color.
+
+---
+
 ### getId
 
 ```lua
