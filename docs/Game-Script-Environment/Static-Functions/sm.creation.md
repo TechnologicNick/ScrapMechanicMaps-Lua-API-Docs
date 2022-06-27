@@ -88,7 +88,7 @@ If the blueprint was not exported with transforms, the importer will treat it as
 ### importFromString
 
 ```lua
-sm.creation.importFromString( world, jsonString, worldPosition, worldRotation, importTransforms, indestructible )
+sm.creation.importFromString( world, jsonString, worldPosition, worldRotation, importTransforms, forceInactive )
 ```
 <code>Server-Only</code> <br></br>
 
@@ -107,7 +107,7 @@ If the blueprint was not exported with transforms, the importer will treat it as
 - <code>worldPosition</code> [<strong> vec3 </strong>]: The world position of the creation. Defaults to <code>sm.vec3.zero()</code>
 - <code>worldRotation</code> [<strong>quat </strong>]: The world rotation of the creation. Defaults to <code>sm.quat.identity()</code>
 - <code>importTransforms</code> [<strong> bool </strong>]: Import world transforms from bodies. Defaults to false.
-- <code>indestructible</code> [<strong> bool </strong>]: (DEPRECATED, use <code>setDestructable</code> on each body in the creation.)
+- <code>forceInactive</code> [<strong> bool </strong>]: Sets whether interactables are forced inactive when imported or not. Defaults to false.
 
 <strong>Returns:</strong> <br></br>
 
