@@ -16,7 +16,7 @@ For more general information on how the Lua scripting language works, you can re
 
 Scrap Mechanic uses Lua version 5.1. Check the official [Manual](https://www.lua.org/manual/5.1/) for more information. <br></br>
 
-The documentation is also available as a [JSON](files/api_json.zip) and as a [Lua documentation file](files/api_lua.zip). <br></br>
+The documentation is also available as a [JSON](/files/api_json.zip) and as a [Lua documentation file](/files/api_lua.zip). <br></br>
 
 :::info note
 This documentation is for Scrap Mechanic Version <strong>0.6.0 or later</strong>.
