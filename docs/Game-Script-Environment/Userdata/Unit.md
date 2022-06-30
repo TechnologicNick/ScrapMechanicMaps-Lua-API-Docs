@@ -42,7 +42,7 @@ A userdata object representing a <strong>unit</strong> in the game.
 	- <code>Set</code>: (Server-Only) Sets the unit's server public data.
 
 
-- <code>id</code> [<strong> int </strong>] <br></br>
+- <code>visionFrustum</code> [<strong> table </strong>] <br></br>
 
 	- <code>Set</code>: (Server-Only) Sets the unit's vision frustum.
 	```lua

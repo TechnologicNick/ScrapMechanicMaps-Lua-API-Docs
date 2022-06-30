@@ -123,6 +123,10 @@ Creates a block on the body.
 - <code>position</code> [<strong> vec3 </strong>]: The shape's local position.
 - <code>forceAccept</code> [<strong> bool </strong>]: Set true to force the body to accept the shape. (Defaults to true)
 
+<strong>Returns:</strong> <br></br>
+
+- [<strong> shape </strong>]: The created shape.
+
 ---
 
 ### createPart
