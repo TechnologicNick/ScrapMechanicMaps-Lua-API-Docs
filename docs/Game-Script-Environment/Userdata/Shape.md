@@ -946,15 +946,18 @@ Returns true if the shape exists.
 ### shapesInSphere
 
 ```lua
-shape:shapesInSphere( radius )
+shape.shapesInSphere( center, radius )
 ```
 
+:::info note
+Due to a bug in the game, this function needs to be called with <code>.</code> instead of <code>:</code>.
+:::
 
 Returns a table of shapes that are inside the sphere.
 
 <strong>Arguments:</strong> <br></br>
 
-- <code>shape</code> [<strong> shape </strong>]: The shape.
+- <code>center</code> [<strong> Vec3 </strong>]: The sphere center position.
 - <code>radius</code> [<strong> number </strong>]: The sphere radius.
 
 <strong>Returns:</strong> <br></br>
