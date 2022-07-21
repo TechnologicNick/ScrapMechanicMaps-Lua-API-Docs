@@ -127,11 +127,16 @@ Sets a lua object that will automatically be synchronized to clients.
 
 Scripts which use this feature needs to implement <code>client_onClientDataUpdate</code>.
 
-<code>client_onClientDataUpdate</code> will be called on the client whenever the data has changed,
-
+<code>client_onClientDataUpdate</code> will be called on the client whenever the data has changed, <br></br>
 including setting the data for the first time.
 
 Channel 1 will be received before channel 2 if both are updated.
+
+:::info note
+The callback function on the client is **only** called if the <br></br>
+data that is being set **has changed**. <br></br>
+If the data being set is **the same**, the client callback is **not** called.
+:::
 
 <strong>Arguments:</strong> <br></br>
 

@@ -1017,7 +1017,7 @@ shape:transformPoint( vector )
 
 Transforms a world point to the local shape transform.
 
-<code>local localpos = self.shape:transformLocalPoint( worldPos )</code> <br></br>
+<code>local localpos = self.shape:transformPoint( worldPos )</code> <br></br>
 
 <strong>Arguments:</strong> <br></br>
 

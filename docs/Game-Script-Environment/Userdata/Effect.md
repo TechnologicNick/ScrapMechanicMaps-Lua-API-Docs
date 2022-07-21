@@ -284,6 +284,34 @@ Sets a named parameter value on the effect.
 - <code>name</code> [<strong> string </strong>]: The parameter name.
 - <code>value</code> [<strong> any </strong>]: The parameter value.
 
+The list below contains *some* of the possible parameter names. <br></br>
+Note that some of these may only work for specific effects.
+
+```
+Velocity_max_50
+minColor 
+maxColor
+minColor2
+maxColor2
+valid
+progress
+char
+Material
+velocity_tree
+craftbot
+size
+impact
+load
+rpm
+gas
+pitch
+health
+fire_intensity
+visualization
+amb_day_night
+music
+```
+
 ---
 
 ### setPosition

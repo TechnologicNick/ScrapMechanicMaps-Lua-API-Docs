@@ -601,6 +601,9 @@ interactable:getSteeringAngle()
 
 Returns the steering angle of the steering interactable.
 
+The value ranges from -1 to +1, where -1 represents steering right <br></br>
+and +1 represents steering left.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>interactable</code> [<strong> interactable </strong>]: The interactable.
@@ -735,7 +738,10 @@ Returns the lock state of a [Joint](/lua/Game-Script-Environment/Userdata/Joint)
 interactable:getSteeringPower()
 ```
 
-Returns the [Character](/lua/Game-Script-Environment/Userdata/Character) that is locking the controller.
+Returns the steering power of the steering interactable.
+
+The value ranges from -1 to +1, where +1 represents pressing "forward" <br></br>
+and -1 represents pressing "backwards".
 
 <strong>Arguments:</strong> <br></br>
 
@@ -743,7 +749,7 @@ Returns the [Character](/lua/Game-Script-Environment/Userdata/Character) that is
 
 <strong>Returns:</strong> <br></br>
 
-- [<strong> character </strong>]: The character.
+- [<strong> number </strong>]: The steering power.
 
 ---
 
