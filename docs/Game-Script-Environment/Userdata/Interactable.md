@@ -1277,6 +1277,10 @@ interactable:setSubMeshVisible( name, visible )
 
 Sets the visibility of a submesh.
 
+:::info note
+The maximum amount of submeshes for an interactable is **32**.
+:::
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>interactable</code> [<strong> interactable </strong>]: The interactable.

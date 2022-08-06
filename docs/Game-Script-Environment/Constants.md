@@ -708,17 +708,18 @@ A table of physics filter types used for things like [raycasts](/lua/Game-Script
 
 ```lua title="Table Contents"
 {
+    all = -1,
     dynamicBody = 1,
     staticBody = 2,
     character = 4,
     areaTrigger = 8,
+    terrainSurface = 128,
+    terrainAsset = 256,
+    harvestable = 512,
     joints = 4096,
-    terrainSurface = ?,
-    terrainAsset = ?,
-    harvestable = ?,
-    static = ?,
-    default = 6023,
-    all = -1
+    static = 34690,
+    default = 38791,
+    voxelTerrain = 32768,
 }
 ```
 
