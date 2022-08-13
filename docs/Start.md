@@ -23,8 +23,8 @@ This documentation is for Scrap Mechanic Version <strong>0.6.0 or later</strong>
 
 The <strong>previous documentation</strong> for Scrap Mechanic Version <strong>0.5.1</strong> can be found [here](https://scrapmechanictools.com/archive/Lua_051/).
 
-If you encounter any errors, malfunctions, broken links or missing information, please <br></br>
-**report them in the [Discord Server](https://discord.gg/2eACct5FDm)!**
+If you encounter any errors, malfunctions, broken links, missing or wrong information, please <br></br>
+**[report them as soon as possible!](https://scrapmechanictools.com/report_issues.html)**
 :::
 
 ### Console

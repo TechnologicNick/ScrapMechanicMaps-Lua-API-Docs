@@ -252,6 +252,26 @@ This is the direction the player wants to move based on movement input.
 
 ---
 
+### getSmoothDirection
+
+```lua
+tool:getSmoothDirection()
+```
+<code>Client-Only</code> <br></br>
+
+Provides a smoother way of getting the direction of the player <br></br>
+holding the tool while playing in multiplayer.
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>tool</code> [<strong> tool </strong>]: The tool.
+
+<strong>Returns:</strong> <br></br>
+
+- [<strong> Vec3 </strong>]: The player's direction.
+
+---
+
 ### getTpBoneDir
 
 ```lua
@@ -684,7 +704,4 @@ Updates the currently set third person view movement animation for the tool.
 - <code>weight</code> [<strong> number </strong>]: The weight.
 
 ---
-
-
-
 

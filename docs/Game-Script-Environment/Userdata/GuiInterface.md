@@ -83,6 +83,27 @@ Appends an item to a list.
 
 ---
 
+### addToPickupDisplay
+
+```lua
+guiInterface:addToPickupDisplay( uuid, amount )
+```
+<code>Client-Only</code> <br></br>
+
+Adds a block, part or tool to the item pickup display in the bottom right corner.
+
+:::info note
+This function only works on a **[Survival HUD](/Game-Script-Environment/Static-Functions/sm.gui#createsurvivalhudgui)** GUI!
+:::
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>guiInterface</code> [<strong> guiInterface </strong>]: The SurvivalHud guiInterface.
+- <code>uuid</code> [<strong> Uuid </strong>]: The uuid of the item that was picked up. Must be a block, part or tool.
+- <code>amount</code> [<strong> number </strong>]: The amount of the item that was picked up.
+
+---
+
 ### clearGrid
 
 ```lua
