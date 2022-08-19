@@ -906,7 +906,7 @@ The replacement shape must have the exact same size/bounding box as the current 
 ### setColor
 
 ```lua
-shape:setColor()
+shape:setColor( color )
 ```
 <code>Server-Only</code> <br></br>
 

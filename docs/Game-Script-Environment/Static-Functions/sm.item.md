@@ -70,10 +70,14 @@ Returns the shape's feature data.
 ### getInteractablesUuidsOfType
 
 ```lua
-sm.item.getInteractablesUuidsOfType()
+sm.item.getInteractablesUuidsOfType( interactableType )
 ```
 
 Returns a table of all interactable uuids of an interactable type.
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>interactableType</code> [<strong> string </strong>]: The interactable type name.
 
 <strong>Returns:</strong> <br></br>
 
