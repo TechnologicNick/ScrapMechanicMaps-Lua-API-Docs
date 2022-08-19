@@ -809,6 +809,12 @@ Set the binding text displayed at the center. <br></br>
 Using hypertext formatting (see [getKeyBinding](#getkeybinding)), you can highlight the text in a box or display an image. <br></br>
 This hypertext can be customized to some extent, see the examples below.
 
+:::info note
+You can display **two lines** of text by calling this function twice. <br></br>
+When doing so, you need to set a **different** text in each call! <br></br>
+If the text in both calls is the same, only one line will be displayed.
+:::
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>text1</code> [<strong> string </strong>]: The leftmost segment.
