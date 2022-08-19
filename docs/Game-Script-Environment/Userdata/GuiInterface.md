@@ -160,6 +160,15 @@ guiInterface:createDropDown( widgetName, functionName, options )
 
 Creates a dropdown menu at the specified widget.
 
+:::info note
+The given callback function is also called when [setSelectedDropDownItem](#setselecteddropdownitem) is used!
+:::
+
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>option</code> [<strong> string </strong>]: The option that was selected in the dropdown.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
@@ -205,6 +214,11 @@ guiInterface:createHorizontalSlider( widget, range, value, callback, enableNumbe
 
 Creates a horizontal slider with the specified widget.
 
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>newPos</code> [<strong> int </strong>]: The new position of the slider.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
@@ -224,6 +238,11 @@ guiInterface:createVerticalSlider( widget, range, value, callback )
 <code>Client-Only</code> <br></br>
 
 Creates a vertical slider with the specified widget.
+
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>newPos</code> [<strong> int </strong>]: The new position of the slider.
 
 <strong>Arguments:</strong> <br></br>
 
@@ -473,6 +492,12 @@ Sets a callback to be called when a button inside a grid is pressed
 Binds a Lua callback to a button widget inside a grid.
 The callback is called when the button widget is clicked.
 
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>name</code> [<strong> string </strong>]: The name of the button that was clicked.
+- <code>index</code> [<strong> int </strong>]: The grid index of the button.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
@@ -706,15 +731,22 @@ Sets if a world GUI requires line of sight to be visible.
 ### setSelectedDropDownItem
 
 ```lua
-guiInterface:setSelectedDropDownItem()
+guiInterface:setSelectedDropDownItem( name, item )
 ```
 <code>Client-Only</code> <br></br>
 
-[Missing Information]
+Selects an option in a dropdown menu.
+
+:::caution warning
+Using this function will also trigger the given dropdown's callback function. <br></br>
+If used wrong, this can create an infinite loop!
+:::
 
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
+- <code>name</code> [<strong> string </strong>]: The name of the dropdown menu's host widget.
+- <code>item</code> [<strong> string </strong>]: The dropdown item to select.
 
 ---
 
@@ -848,6 +880,12 @@ guiInterface:setTextAcceptedCallback( editBoxName, callback )
 Sets a callback to be called when a user submits <br></br>
 text into an EditBox widget.
 
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>name</code> [<strong> string </strong>]: The name of the TextBox that the text was entered into.
+- <code>text</code> [<strong> string </strong>]: The text that was submitted.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
@@ -864,6 +902,12 @@ guiInterface:setTextChangedCallback( editBoxName, callback )
 <code>Client-Only</code> <br></br>
 
 Sets a callback to be called when the text in an EditBox widget changes.
+
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>name</code> [<strong> string </strong>]: The name of the TextBox that the text was entered into.
+- <code>text</code> [<strong> string </strong>]: The new text in the TextBox.
 
 <strong>Arguments:</strong> <br></br>
 
