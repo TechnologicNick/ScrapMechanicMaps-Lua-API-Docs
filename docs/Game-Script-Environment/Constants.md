@@ -538,36 +538,36 @@ The table of types that an interactable can be.
 
 ```lua title="Table Contents"
 {
-    "electricEngine",
-    "gasEngine",
-    "steering",
-    "seat",
-    "controller",
-    "button",
-    "lever",
-    "sensor",
-    "thruster",
-    "radio",
-    "horn",
-    "tone",
-    "logic",
-    "timer",
-    "particlePreview",
-    "spring",
-    "pointLight",
-    "spotLight",
-    "chest",
-    "itemStack",
-    "scripted",
-    "piston", 
-    "simpleInteractive",
-    "camera",
-    "waypoint",
-    "survivalThruster",
-    "survivalPiston",
-    "survivalSpring",
-    "survivalSequence",
-    "survivalSensor"
+	"electricEngine",
+	"gasEngine",
+	"steering",
+	"seat",
+	"controller",
+	"button",
+	"lever",
+	"sensor",
+	"thruster",
+	"radio",
+	"horn",
+	"tone",
+	"logic",
+	"timer",
+	"particlePreview",
+	"spring",
+	"pointLight",
+	"spotLight",
+	"chest",
+	"itemStack",
+	"scripted",
+	"piston",
+	"simpleInteractive",
+	"camera",
+	"waypoint",
+	"survivalThruster",
+	"survivalPiston",
+	"survivalSpring",
+	"survivalSequence",
+	"survivalSensor"
 }
 ```
 
@@ -637,39 +637,6 @@ Flags used with the steering component.
     right = 2,
     forward = 4,
     backward = 8
-}
-```
-
----
-
-### sm.interactable.steering
-	
-A table of available interactable types.
-
-```lua title="Table Contents"
-{
-"electricEngine",
-"gasEngine",
-"steering",
-"seat",
-"controller",
-"button",
-"lever",
-"sensor",
-"thruster",
-"radio",
-"horn",
-"tone",
-"logic",
-"timer",
-"particlePreview",
-"spring",
-"pointLight",
-"spotLight",
-"chest",
-"scripted",
-"piston",
-"simpleInteractive",
 }
 ```
 
