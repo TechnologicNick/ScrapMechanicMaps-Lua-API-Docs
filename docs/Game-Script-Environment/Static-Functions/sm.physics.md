@@ -73,7 +73,7 @@ Performs a distance [ray cast](https://en.wikipedia.org/wiki/Ray_casting) from a
 ### explode
 
 ```lua
-sm.physics.explode( position, level, destructionRadius, impulseRadius, magnitude, effectName, ignoreShape, parameters )
+sm.physics.explode( position, level, destructionRadius, impulseRadius, magnitude, effectName, ignore, parameters )
 ```
 <code>Server-Only</code> <br></br>
 
@@ -100,7 +100,7 @@ A quality level of 0 means a block or part is indestructible.
 - <code>impulseRadius</code> [<strong> number </strong>]: The impulse radius. Objects inside this sphere are affected by an impulse.
 - <code>magnitude</code> [<strong> number </strong>]: The impulse strength of the explosion. The strength diminishes with distance.
 - <code>effectName</code> [<strong> string </strong>]: The name of the effect to be played upon explosion. Optional.
-- <code>ignoreShape</code> [<strong> shape </strong>]: The shape to be ignored. Optional.
+- <code>ignore</code> [<strong> Shape </strong>]: The shape to be ignored. Optional.
 - <code>parameters</code> [<strong> table </strong>]: A table containing parameters for the effect. Optional.
 
 ---
@@ -238,7 +238,7 @@ Type can be "sphere" or "ray". Radius is ignored for rays.
 ### raycast
 
 ```lua
-sm.physics.raycast( startPos, endPos, body, mask )
+sm.physics.raycast( startPos, endPos, ignore, mask )
 ```
 
 Performs a [ray cast](https://en.wikipedia.org/wiki/Ray_casting) between two positions.
@@ -251,7 +251,7 @@ If the ray cast is called from within a shape (e.g. a Sensor), a [Body](/lua/Gam
 
 - <code>startPos</code> [<strong> vec3 </strong>]: The start position.
 - <code>endPos</code> [<strong> vec3 </strong>]: The end position.
-- <code>body</code> [<strong> body </strong>]: The body to ignore. Defaults to none.
+- <code>ignore</code> [<strong> Shape/Body/Character/? </strong>]: The object to ignore. Defaults to none.
 - <code>mask</code> [<strong> int </strong>]: The collision mask. Defaults to <code>sm.physics.filter.default</code>.
 
 <strong>Returns:</strong> <br></br>
@@ -264,12 +264,12 @@ If the ray cast is called from within a shape (e.g. a Sensor), a [Body](/lua/Gam
 ### raycastTarget
 
 ```lua
-sm.physics.raycastTarget( startPos, endPos, body )
+sm.physics.raycastTarget( startPos, endPos, target )
 ```
 
 Performs a [ray cast](https://en.wikipedia.org/wiki/Ray_casting) between two positions to find a specific target.
 
-A target [Body](/lua/Game-Script-Environment/Userdata/Body) must be provided.
+A target [Body](/lua/Game-Script-Environment/Userdata/Body) or [Character](/lua/Game-Script-Environment/Userdata/Character) must be provided.
 
 The returned [RaycastResult](/lua/Game-Script-Environment/Userdata/RaycastResult) contains information about any object intersected by the ray.
 
@@ -277,7 +277,7 @@ The returned [RaycastResult](/lua/Game-Script-Environment/Userdata/RaycastResult
 
 - <code>startPos</code> [<strong> vec3 </strong>]: The start position.
 - <code>endPos</code> [<strong> vec3 </strong>]: The end position.
-- <code>body</code> [<strong> body </strong>]: The body be exclusively checked.
+- <code>target</code> [<strong> Body/Character </strong>]: The object be exclusively checked.
 
 <strong>Returns:</strong> <br></br>
 
@@ -304,7 +304,7 @@ Sets the gravitational acceleration affecting [shapes](/lua/Game-Script-Environm
 ### sphereContactCount
 
 ```lua
-sm.physics.sphereContactCount( worldPosition, radius, includeTerrain, countWater )
+sm.physics.sphereContactCount( worldPosition, radius, includeTerrain, includeWater )
 ```
 
 Returns the number of collision objects that were found inside the given sphere.
@@ -314,7 +314,7 @@ Returns the number of collision objects that were found inside the given sphere.
 - <code>worldPosition</code> [<strong> vec3 </strong>]: The sphere position.
 - <code>radius</code> [<strong> number </strong>]: The sphere radius.
 - <code>includeTerrain</code> [<strong> bool </strong>]: Whether terrain should be included in the test. Defaults to false.
-- <code>countWater</code> [<strong> bool </strong>]: Whether water should be included in the test. Defaults to false.
+- <code>includeWater</code> [<strong> bool </strong>]: Whether water should be included in the test. Defaults to false.
 
 <strong>Returns:</strong> <br></br>
 
@@ -325,7 +325,7 @@ Returns the number of collision objects that were found inside the given sphere.
 ### spherecast
 
 ```lua
-sm.physics.spherecast( startPos, endPos, radius, body, mask )
+sm.physics.spherecast( startPos, endPos, radius, ignore, mask )
 ```
 
 Performs a spherical [ray cast](https://en.wikipedia.org/wiki/Ray_casting) between two positions.
@@ -339,7 +339,7 @@ If the ray cast is called from within a shape (e.g. a Sensor), a [Body](/lua/Gam
 - <code>startPos</code> [<strong> vec3 </strong>]: The start position.
 - <code>endPos</code> [<strong> vec3 </strong>]: The end position.
 - <code>radius</code> [<strong> number </strong>]: The radius of the sphere.
-- <code>body</code> [<strong> body </strong>]: The body to ignore. Defaults to none.
+- <code>ignore</code> [<strong> Shape/Body/Character </strong>]: The object to ignore. Defaults to none.
 - <code>mask</code> [<strong> int </strong>]: The collision mask. Defaults to <code>sm.physics.filter.default</code>.
 
 <strong>Returns:</strong> <br></br>

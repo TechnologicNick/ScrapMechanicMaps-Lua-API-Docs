@@ -186,6 +186,10 @@ sm.projectile.shapeProjectileAttack( name, damage, position, velocity, source, d
 
 Performs a projectile attack.
 
+:::info note
+The fire position is <strong>local to the given shape</strong>.
+:::
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>name</code> [<strong> string </strong>]: The projectile's name or uuid (<code>name</code> is deprecated, use uuid instead).

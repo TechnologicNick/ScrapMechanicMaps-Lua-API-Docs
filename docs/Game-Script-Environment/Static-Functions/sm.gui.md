@@ -317,7 +317,7 @@ sm.gui.createGuiFromLayout( layout, destroyOnClose, settings )
 ```
 <code>Client-Only</code> <br></br>
 
-Creates a custom GUI from a layout file.
+Creates a custom GUI from a layout file, with optional settings.
 
 <strong>Arguments:</strong> <br></br>
 
@@ -328,11 +328,11 @@ Creates a custom GUI from a layout file.
 ```lua title="'settings' Table Structure"
 {
 	isHud = false,			--Whether the GUI is a HUD GUI or not.
-	isInteractive = false,	--?
-	needsCursor = false,	--?
-	hidesHotbar = false,	--?
+	isInteractive = false,	--Whether the GUI can be interacted with or not.
+	needsCursor = false,	--Whether the GUI "captures" the mouse or not.
+	hidesHotbar = false,	--Whether the hotbar is hidden when the GUI is open or not.
 	isOverlapped = false,	--?
-	backgroundAlpha = 1.0,	--?
+	backgroundAlpha = 1.0,	--The transparency of the GUI background. 1 = opaque, 0 = transparent
 }
 ```
 
