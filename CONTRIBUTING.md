@@ -50,7 +50,7 @@ Doing so will break one of the formatting types, causing it to be rendered incor
 ```
 **This is bold text**.
 
-<strong>This is bold text<strong>.
+<strong>This is bold text</strong>.
 ```
 
 ## When adding or editing content
