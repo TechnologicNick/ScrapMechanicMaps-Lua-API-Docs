@@ -26,6 +26,28 @@ The fields below are accessed using <code>self.fieldName</code> in the GameClass
 | [Storage](/lua/Game-Script-Environment/Userdata/Storage) | storage | A server-side [Storage](/lua/Game-Script-Environment/Userdata/Storage) object that can be used to save and load data to/from the world database. |
 | any | data | Game start data. |
 
+:::info note
+The <code>data</code> field contains different data depending on the loaded game mode.
+
+In <strong>Challenge Mode</strong>, the table contains challenge level data, e.g. blueprints. <br></br>
+In <strong>Creative</strong> and <strong>Survival Mode</strong>, it contains:
+
+```lua
+{
+	seed = 1.04824e+07 --number, a random seed to be used for terrain generation
+}
+```
+In a <strong>Custom Game Mode</strong>, it contains two values:
+
+```lua
+{
+	seed = 1.04824e+07, --number, a random seed to be used for terrain generation
+	dev = true			--boolean, whether the game was started with -dev or not
+}
+```
+
+:::
+
 <strong>Constants:</strong> <br></br>
 
 [defaultInventorySize](/Game-Script-Environment/Constants#gameclass) <br></br>
