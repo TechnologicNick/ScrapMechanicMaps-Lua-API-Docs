@@ -495,8 +495,10 @@ The callback is called when the button widget is clicked.
 <strong>The callback receives:</strong> <br></br>
 
 - <code>self</code> [<strong> table </strong>]: The class instance.
-- <code>name</code> [<strong> string </strong>]: The name of the button that was clicked.
+- <code>buttonName</code> [<strong> string </strong>]: The name of the button that was clicked.
 - <code>index</code> [<strong> int </strong>]: The grid index of the button.
+- <code>itemData</code> [<strong> table </strong>]: Data set to the grid item using <code>setGridItem</code>.
+- <code>gridName</code> [<strong> string </strong>]: The name of the grid containing the button.
 
 <strong>Arguments:</strong> <br></br>
 
