@@ -187,6 +187,12 @@ guiInterface:createGridFromJson( gridName, data )
 
 Creates a grid from a table.
 
+<strong>Valid grid types are:</strong> <br></br>
+
+- <code>processGrid</code>
+- <code>materialGrid</code>
+- <code>itemGrid</code>
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
