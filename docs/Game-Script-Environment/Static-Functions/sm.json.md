@@ -37,7 +37,11 @@ Returns whether any file *or* folder exists at the given path.
 sm.json.open( file )
 ```
 
-Opens a JSON file and returns it's content as a Lua table.
+Opens a file and returns its content. <br></br>
+The returned content can be: <br></br>
+- A Lua table, if the file content is JSON data
+- A Lua string, if the file content is a raw string (<code>"something"</code>)
+- A Lua number, if the file content is a raw number (<code>12345</code>)
 
 <strong>Arguments:</strong> <br></br>
 
@@ -45,7 +49,7 @@ Opens a JSON file and returns it's content as a Lua table.
 
 <strong>Returns:</strong> <br></br>
 
-- [<strong> table </strong>]: The loaded JSON data.
+- [<strong> table/string/number </strong>]: The loaded file data.
 
 ---
 
@@ -73,15 +77,19 @@ Parses a JSON string and returns it as a Lua table.
 sm.json.save( data, path )
 ```
 
-Writes a Lua table to a JSON file.
+Writes Lua data to a file. <br></br>
+The resulting file contents depend on the data that is written:
+- A Lua table is saved as JSON data
+- A Lua string is saved as a raw string (<code>"something"</code>)
+- A Lua number is saved as a raw number (<code>12345</code>)
 
 If the file does not exist, this will create a new file at the given file path. <br></br>
-If the file does exist, this will overwrite the file content.
+If the file does exist, this will overwrite the file's content.
 
 <strong>Arguments:</strong> <br></br>
 
-- <code>data</code> [<strong> table </strong>]: The Lua table.
-- <code>path</code> [<strong> string </strong>]: The path to the JSON file.
+- <code>data</code> [<strong> table/string/number </strong>]: The Lua data.
+- <code>path</code> [<strong> string </strong>]: The path to the file.
 
 ---
 

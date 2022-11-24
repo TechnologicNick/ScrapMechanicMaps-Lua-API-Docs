@@ -348,6 +348,7 @@ This callback can also be used to change the interaction text shown to the playe
 
 ```lua
 function ShapeClass.client_onAction( self, action, state )
+	return true --or false
 end
 ```
 Called when the interactable receives input from a [Player](/lua/Game-Script-Environment/Userdata/Player) with the [Character](/lua/Game-Script-Environment/Userdata/Character) locked to the [Interactable](/lua/Game-Script-Environment/Userdata/Interactable).
@@ -356,11 +357,18 @@ When a [Character](/lua/Game-Script-Environment/Userdata/Character) is seated in
 
 Details about the <code>action</code> value are in [sm.interactable.actions](/lua/Game-Script-Environment/Constants#sminteractableactions).
 
+If the return value is <code>true</code>, the action is "consumed", e.g. if <code>W</code> is pressed, the player does **not** move forwards. <br></br>
+If the return value is <code>false</code>, the action is **not** consumed, e.g. if <code>W</code> is pressed, the player also moves forwards.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>self</code> [<strong> table </strong>]: The class instance.
 - <code>action</code> [<strong> int </strong>]: The action as an integer value.
 - <code>state</code> [<strong> bool </strong>]: True on begin action, false on end action.
+
+<strong>Returns:</strong> <br></br>
+
+- [<strong> bool </strong>]: A boolean indicating whether the action is "consumed" or not.
 
 ---
 

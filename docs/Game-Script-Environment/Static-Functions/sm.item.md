@@ -279,6 +279,22 @@ Returns whether the item is a tool or not.
 
 ---
 
+### isBlueprintShape
 
+```lua
+sm.item.isBlueprintShape( uuid )
+```
+
+Returns whether the item is a blueprint shape or not.
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>uuid</code> [<strong> uuid </strong>]: The item uuid.
+
+<strong>Returns:</strong> <br></br>
+
+- [<strong> bool </strong>]: Whether the item is a blueprint shape or not.
+
+---
 
 

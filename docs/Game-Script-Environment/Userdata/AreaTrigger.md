@@ -174,7 +174,7 @@ The <code>onProjectile</code> event is triggered if a projectile collides with t
 
 <strong>The callback must return:</strong> <br></br>
 
-- [<strong> bool </strong>]: Whether the projectile should be kept or not. <code>false</code> = erase the projectile, <code>true</code> = keep the projectile.
+- [<strong> bool </strong>]: Whether the projectile should be erased or not. <code>true</code> = erase the projectile, <code>false</code> = keep the projectile.
 
 <strong>Arguments:</strong> <br></br>
 
