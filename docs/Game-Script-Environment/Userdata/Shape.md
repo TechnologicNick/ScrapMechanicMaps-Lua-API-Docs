@@ -339,8 +339,11 @@ Returns the buoyancy multiplier of the shape.
 shape:getClosestBlockLocalPosition( position )
 ```
 
-
 Transform a world position to the closest block's local position in a shape.
+
+:::info note
+The given shape must be a <code>block</code> type, not <code>part</code>.
+:::
 
 <strong>Arguments:</strong> <br></br>
 
