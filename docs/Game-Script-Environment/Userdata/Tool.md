@@ -31,6 +31,19 @@ tool:getAnimationInfo( name )
 
 Returns general information for a third person view animation.
 
+The <code>name</code> and <code>looping</code> properties are extracted from the animation JSON data:
+
+```json
+{
+	"name": "my_animation",	//the 'name' in the returned table
+	"file": "$CONTENT_DATA/Tools/Animations/my_animation.dae",
+	"looping": true	//the 'looping' property in the returned table
+}
+```
+The <code>duration</code> property is extracted from the animation.dae file specified in the animation JSON.
+
+This function may return <code>nil</code> if it fails to get the animation info.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>tool</code> [<strong> tool </strong>]: The tool.
@@ -90,11 +103,24 @@ Returns the player's view/aim direction.
 ### getFpAnimationInfo
 
 ```lua
-tool:getFpAnimationInfo()
+tool:getFpAnimationInfo( name )
 ```
 <code>Client-Only</code> <br></br>
 
 Returns general information for a first person view animation.
+
+The <code>name</code> and <code>looping</code> properties are extracted from the animation JSON data:
+
+```json
+{
+	"name": "my_animation",	//the 'name' in the returned table
+	"file": "$CONTENT_DATA/Tools/Animations/my_animation.dae",
+	"looping": true	//the 'looping' property in the returned table
+}
+```
+The <code>duration</code> property is extracted from the animation.dae file specified in the animation JSON.
+
+This function may return <code>nil</code> if it fails to get the animation info.
 
 <strong>Arguments:</strong> <br></br>
 
