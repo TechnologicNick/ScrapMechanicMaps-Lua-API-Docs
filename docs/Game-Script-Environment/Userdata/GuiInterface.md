@@ -74,6 +74,10 @@ guiInterface:addListItem( listName, itemName, data )
 
 Appends an item to a list.
 
+:::info note
+Lists are currently not implemented for custom GUI layouts and do not work.
+:::
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
@@ -128,6 +132,10 @@ guiInterface:clearList( listName )
 <code>Client-Only</code> <br></br>
 
 Clears a list.
+
+:::info note
+Lists are currently not implemented for custom GUI layouts and do not work.
+:::
 
 <strong>Arguments:</strong> <br></br>
 
@@ -663,6 +671,10 @@ guiInterface:setListSelectionCallback( listName, callback )
 
 Sets a callback to be called when a list selection is changed.
 
+:::info note
+Lists are currently not implemented for custom GUI layouts and do not work.
+:::
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
@@ -766,6 +778,10 @@ guiInterface:setSelectedListItem( listName, itemName )
 <code>Client-Only</code> <br></br>
 
 Selects an item in a list.
+
+:::info note
+Lists are currently not implemented for custom GUI layouts and do not work.
+:::
 
 <strong>Arguments:</strong> <br></br>
 

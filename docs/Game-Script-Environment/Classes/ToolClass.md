@@ -95,15 +95,23 @@ See [sm.tool.interactState](/lua/Game-Script-Environment/Constants#smtoolinterac
 ### onToggle
 
 ```lua
-function ToolClass.client_onToggle( self )
+function ToolClass.client_onToggle( self, backwards )
 	return true --true or false, default false
 end
 ```
 Called when the [Player](/lua/Game-Script-Environment/Userdata/Player) presses a toggle key with the [Tool](/lua/Game-Script-Environment/Userdata/Tool) equipped (default <code>Q</code> and <code>Shift + Q</code>).
 
+If the player turns the mouse wheel while holding shift, this function will be called and <br></br>
+the <code>backwards</code> parameter represents the direction the wheel was rotated.
+
+:::info note
+The <code>backwards</code> parameter seems to be broken, it is always <code>true</code>.
+:::
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>backwards</code> [<strong> boolean </strong>]: Whether the mouse wheel was turned backwards or not.
 
 <strong>Returns:</strong> <br></br>
 
