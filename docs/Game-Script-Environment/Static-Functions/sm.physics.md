@@ -191,7 +191,14 @@ sm.physics.multicast( casts )
 
 Performs multiple sphere and/or raycasts given a table of parameters.
 
-Type can be "sphere" or "ray". Radius is ignored for rays.
+<code>type</code> can be <code>"sphere"</code> or <code>"ray"</code>. Radius is ignored for rays. <br></br>
+
+<code>ignoreObject</code> can be a <code>Body</code>, <code>Harvestable</code>, <code>Character</code>, <code>Shape</code> or <code>AreaTrigger</code>. <br></br> <br></br>
+
+:::caution warning
+Due to a bug in the game, the <code>ignoreObject</code> parameter does currently **not** work for <code>AreaTrigger</code>s. <br></br>
+Attempting to use an <code>AreaTrigger</code> in <code>ignoreObject</code> will cause an error.
+:::
 
 <strong>Arguments:</strong> <br></br>
 
@@ -207,12 +214,14 @@ Type can be "sphere" or "ray". Radius is ignored for rays.
 		type = "ray",					--The cast type.
 		startPoint = vec3,				--The start point.
 		endPoint = vec3,				--The end point.
+		ignoreObject = (see list above),--The object to be ignored by the ray.
 		mask = sm.physics.filter.all	--The cast filter.
 	},
 	{
 		type = "sphere",				--The cast type.
 		startPoint = vec3,				--The start point.
 		endPoint = vec3,				--The end point.
+		ignoreObject = (see list above),--The object to be ignored by the ray.
 		radius = 5,						--The sphere radius.
 		mask = sm.physics.filter.all	--The cast filter.
 	},
@@ -269,7 +278,7 @@ sm.physics.raycastTarget( startPos, endPos, target )
 
 Performs a [ray cast](https://en.wikipedia.org/wiki/Ray_casting) between two positions to find a specific target.
 
-A target [Body](/lua/Game-Script-Environment/Userdata/Body) or [Character](/lua/Game-Script-Environment/Userdata/Character) must be provided.
+A target [Body](/lua/Game-Script-Environment/Userdata/Body), [Character](/lua/Game-Script-Environment/Userdata/Character), [Harvestable](/lua/Game-Script-Environment/Userdata/Harvestable) or [AreaTrigger](/lua/Game-Script-Environment/Userdata/AreaTrigger) must be provided.
 
 The returned [RaycastResult](/lua/Game-Script-Environment/Userdata/RaycastResult) contains information about any object intersected by the ray.
 
@@ -277,7 +286,7 @@ The returned [RaycastResult](/lua/Game-Script-Environment/Userdata/RaycastResult
 
 - <code>startPos</code> [<strong> vec3 </strong>]: The start position.
 - <code>endPos</code> [<strong> vec3 </strong>]: The end position.
-- <code>target</code> [<strong> Body/Character </strong>]: The object be exclusively checked.
+- <code>target</code> [<strong> Body/Character/Harvestable/AreaTrigger </strong>]: The object be exclusively checked.
 
 <strong>Returns:</strong> <br></br>
 
@@ -332,14 +341,14 @@ Performs a spherical [ray cast](https://en.wikipedia.org/wiki/Ray_casting) betwe
 
 The returned [RaycastResult](/lua/Game-Script-Environment/Userdata/RaycastResult) contains information about any object intersected by the ray.
 
-If the ray cast is called from within a shape (e.g. a Sensor), a [Body](/lua/Game-Script-Environment/Userdata/Body) may be provided which the ray will not intersect.
+A [Body](/lua/Game-Script-Environment/Userdata/Body), [Harvestable](/lua/Game-Script-Environment/Userdata/Harvestable), [Character](/lua/Game-Script-Environment/Userdata/Character), [Shape](/lua/Game-Script-Environment/Userdata/Shape) or [AreaTrigger](/lua/Game-Script-Environment/Userdata/AreaTrigger) may be provided which the ray will not intersect.
 
 <strong>Arguments:</strong> <br></br>
 
 - <code>startPos</code> [<strong> vec3 </strong>]: The start position.
 - <code>endPos</code> [<strong> vec3 </strong>]: The end position.
 - <code>radius</code> [<strong> number </strong>]: The radius of the sphere.
-- <code>ignore</code> [<strong> Shape/Body/Character </strong>]: The object to ignore. Defaults to none.
+- <code>ignore</code> [<strong> Body/Harvestable/Character/Shape/AreaTrigger </strong>]: The object to ignore. Defaults to none.
 - <code>mask</code> [<strong> int </strong>]: The collision mask. Defaults to <code>sm.physics.filter.default</code>.
 
 <strong>Returns:</strong> <br></br>

@@ -211,6 +211,8 @@ Creates a grid from a table.
 {
 	type = string,
 	layout = string,
+	itemTop = ???,
+	itemLeft = ???,
 	itemWidth = int,
 	itemHeight = int,
 	itemCount = int
