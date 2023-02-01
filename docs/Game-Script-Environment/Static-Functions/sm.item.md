@@ -215,6 +215,9 @@ sm.item.isHarvestablePart( uuid )
 
 Returns whether the uuid belongs to a harvestable shape.
 
+This is the case when the tested shape uuid belongs to a part that has the <code>"harvestablePart"</code> property <br></br>
+set to <code>true</code> in its shapeset JSON entry.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>uuid</code> [<strong> uuid </strong>]: The item uuid.

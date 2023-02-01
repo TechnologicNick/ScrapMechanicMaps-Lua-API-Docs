@@ -293,6 +293,21 @@ Indoor worlds have only one terrain cell, at <code>0, 0</code>
 
 ---
 
+<strong>isStatic</strong> <br></br>
+Sets whether the world is static or not.
+
+If a world is set to static, the entire terrain in it is loaded at once and the dynamic cell loading/unloading <br></br>
+(depending on render distance) system is disabled (meaning the entire world/terrain stays loaded at all times).
+
+:::caution warning
+Enabling this on a large/complex world can cause a massive loss of performance or even crash! <br></br>
+It is recommended to leave this disabled unless there is a reason to enable it.
+:::
+
+- <code>enable</code> [<strong> bool </strong>]: A boolean indicating whether the world is static or not.
+
+---
+
 <strong>renderMode</strong> <br></br>
 Sets the render mode for this world. <br></br>
 Default = "outdoor"
@@ -356,7 +371,7 @@ Filters can be combined by adding them. <br></br>
 	dynamicBody = 1,
 	staticBody = 2,
 	character = 4,
-	areatrigger = 8,
+	areaTrigger = 8,
 	harvestable = 512,
 	lift = 1024,
 	voxelTerrain = 32768,

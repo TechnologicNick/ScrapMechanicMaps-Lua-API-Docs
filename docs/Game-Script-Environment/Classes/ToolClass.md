@@ -157,6 +157,19 @@ This event is called to check whether the [Tool](/lua/Game-Script-Environment/Us
 
 ---
 
+### equipWhileSeated
 
+```lua
+function ToolClass.client_equipWhileSeated( self )
+end
+```
+Called when the tool is equipped while the player is in a seat. <br></br>
+This only works for the Log Book tool and not for normal tools (even when <code>sm.tool.forceTool</code> is used).
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+
+---
 
 
