@@ -896,7 +896,9 @@ shape:replaceShape( uuid )
 Replaces a shape with another.
 
 :::info note
-The replacement shape must have the exact same size/bounding box as the current shape!
+The replacement shape must have the exact same size/bounding box and shape type (e.g. scripted/logic/timer/etc.) as the current shape.
+
+If the shape is a Lua scripted shape, the shape's script is **not** reloaded/recreated after replacement (e.g. its <code>*_onCreate</code> callback is **not** called).
 :::
 
 <strong>Arguments:</strong> <br></br>
