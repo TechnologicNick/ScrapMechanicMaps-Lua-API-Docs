@@ -17,7 +17,7 @@ Can only be used on the [client](/lua/#client)
 
 <strong>Values:</strong>
 
-- <code>id</code> [<strong> int </strong>] <br></br>
+- <code>id</code> [<strong> number </strong>] <br></br>
 
 	- <code>Get</code>: The id of the effect.
 
@@ -233,7 +233,7 @@ Creates a horizontal slider with the specified widget.
 <strong>The callback receives:</strong> <br></br>
 
 - <code>self</code> [<strong> table </strong>]: The class instance.
-- <code>newPos</code> [<strong> int </strong>]: The new position of the slider.
+- <code>newPos</code> [<strong> number </strong>]: The new position of the slider.
 
 <strong>Arguments:</strong> <br></br>
 
@@ -258,7 +258,7 @@ Creates a vertical slider with the specified widget.
 <strong>The callback receives:</strong> <br></br>
 
 - <code>self</code> [<strong> table </strong>]: The class instance.
-- <code>newPos</code> [<strong> int </strong>]: The new position of the slider.
+- <code>newPos</code> [<strong> number </strong>]: The new position of the slider.
 
 <strong>Arguments:</strong> <br></br>
 
@@ -350,7 +350,7 @@ Plays an effect at a widget inside a grid.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>gridName</code> [<strong> string </strong>]: The name of the grid.
-- <code>index</code> [<strong> int </strong>]: The index of the grid.
+- <code>index</code> [<strong> number </strong>]: The index of the grid.
 - <code>effectName</code> [<strong> string </strong>]: The name of the effect.
 - <code>restart</code> [<strong> bool </strong>]: Whether the effect should restart or not.
 
@@ -512,7 +512,7 @@ The callback is called when the button widget is clicked.
 
 - <code>self</code> [<strong> table </strong>]: The class instance.
 - <code>buttonName</code> [<strong> string </strong>]: The name of the button that was clicked.
-- <code>index</code> [<strong> int </strong>]: The grid index of the button.
+- <code>index</code> [<strong> number </strong>]: The grid index of the button.
 - <code>itemData</code> [<strong> table </strong>]: Data set to the grid item using <code>setGridItem</code>.
 - <code>gridName</code> [<strong> string </strong>]: The name of the grid containing the button.
 
@@ -537,7 +537,7 @@ Sets an item in a grid.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>gridName</code> [<strong> string </strong>]: The name of the grid.
-- <code>index</code> [<strong> int </strong>]: The item index.
+- <code>index</code> [<strong> number </strong>]: The item index.
 - <code>item</code> [<strong> table </strong>]: The item.
 
 ---
@@ -589,7 +589,7 @@ Sets the size of a grid.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>gridName</code> [<strong> string </strong>]: The name of the grid.
-- <code>size</code> [<strong> int </strong>]: The size.
+- <code>size</code> [<strong> number </strong>]: The size.
 
 ---
 
@@ -823,8 +823,8 @@ Sets the position and range of a slider.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>sliderName</code> [<strong> string </strong>]: The name of the slider.
-- <code>range</code> [<strong> unsigned_int </strong>]: The range of the slider.
-- <code>position</code> [<strong> unsigned_int </strong>]: The position of the slider.
+- <code>range</code> [<strong> number </strong>]: The range of the slider.
+- <code>position</code> [<strong> number </strong>]: The position of the slider.
 
 ---
 
@@ -841,7 +841,7 @@ Sets the position of a slider.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>sliderName</code> [<strong> string </strong>]: The name of the slider.
-- <code>position</code> [<strong> int </strong>]: The position of the slider.
+- <code>position</code> [<strong> number </strong>]: The position of the slider.
 
 ---
 
@@ -858,7 +858,7 @@ Sets the range of a slider.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>sliderName</code> [<strong> string </strong>]: The name of the slider.
-- <code>range</code> [<strong> int </strong>]: The range of the slider.
+- <code>range</code> [<strong> number </strong>]: The range of the slider.
 
 ---
 
@@ -875,7 +875,7 @@ Sets the range limit of a slider.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>sliderName</code> [<strong> string </strong>]: The name of the slider.
-- <code>limit</code> [<strong> int </strong>]: The range limit of the slider.
+- <code>limit</code> [<strong> number </strong>]: The range limit of the slider.
 
 ---
 
@@ -1008,7 +1008,7 @@ Stops an effect playing inside a grid.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>gridName</code> [<strong> string </strong>]: The name of the grid.
-- <code>index</code> [<strong> int </strong>]: The grid index.
+- <code>index</code> [<strong> number </strong>]: The grid index.
 - <code>effect</code> [<strong> string </strong>]: The name of the effect.
 
 ---
