@@ -16,7 +16,7 @@ AI utility functions.
 ### directPathAvailable
 
 ```lua
-sm.ai.directPathAvailable( unit, position )
+sm.ai.directPathAvailable( unit, position, maxDistance )
 ```
 
 Checks if the unit can reach the target position by moving straight.
@@ -25,6 +25,7 @@ Checks if the unit can reach the target position by moving straight.
 
 - <code>unit</code> [<strong> unit </strong>]: The unit.
 - <code>position</code> [<strong> vec3 </strong>]: The target position.
+- <code>maxDistance</code> [<strong> number </strong>]: The maximum distance to allow. Optional.
 
 <strong>Returns:</strong> <br></br>
 
