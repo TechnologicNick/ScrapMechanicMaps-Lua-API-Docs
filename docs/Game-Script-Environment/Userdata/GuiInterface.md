@@ -596,7 +596,7 @@ Sets the size of a grid.
 ### setHost
 
 ```lua
-guiInterface:setHost( widget, host, joint )
+guiInterface:setHost( host, bone )
 ```
 <code>Client-Only</code> <br></br>
 
@@ -605,9 +605,8 @@ Sets the host for a world gui.
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
-- <code>widget</code> [<strong> string </strong>]: The name of the widget.
-- <code>host</code> [<strong> shape/character </strong>]: The GUI host.
-- <code>joint</code> [<strong> string </strong>]: The joint (optional).
+- <code>host</code> [<strong> Shape/Character </strong>]: The GUI host.
+- <code>bone</code> [<strong> string </strong>]: The animation bone to attach to. Optional.
 
 ---
 
