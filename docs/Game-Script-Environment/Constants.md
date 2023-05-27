@@ -181,7 +181,7 @@ Value are integers 0-3 (Defaults to 0, no poses).
 
 A value greater that 0 indicates that the renderable's mesh is set up to blend into <code>pose0</code>, <code>pose1</code>, <code>pose2</code>. <br></br>
 
-- <code>highlightColor</code> [<strong> color </strong>]: The connection-point's normal color.
+- <code>poseWeightCount</code> [<strong> number </strong>]: The number of animation poses.
 
 ---
 
