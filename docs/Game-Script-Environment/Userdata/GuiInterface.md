@@ -17,7 +17,7 @@ Can only be used on the [client](/lua/#client)
 
 <strong>Values:</strong>
 
-- <code>id</code> [<strong> int </strong>] <br></br>
+- <code>id</code> [<strong> number </strong>] <br></br>
 
 	- <code>Get</code>: The id of the effect.
 
@@ -74,12 +74,37 @@ guiInterface:addListItem( listName, itemName, data )
 
 Appends an item to a list.
 
+:::info note
+Lists are currently not implemented for custom GUI layouts and do not work.
+:::
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>listName</code> [<strong> string </strong>]: The name of the list.
 - <code>itemName</code> [<strong> string </strong>]: The name of the item.
 - <code>data</code> [<strong> table </strong>]: Table of data to store.
+
+---
+
+### addToPickupDisplay
+
+```lua
+guiInterface:addToPickupDisplay( uuid, amount )
+```
+<code>Client-Only</code> <br></br>
+
+Adds a block, part or tool to the item pickup display in the bottom right corner.
+
+:::info note
+This function only works on a **[Survival HUD](/Game-Script-Environment/Static-Functions/sm.gui#createsurvivalhudgui)** GUI!
+:::
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>guiInterface</code> [<strong> guiInterface </strong>]: The SurvivalHud guiInterface.
+- <code>uuid</code> [<strong> Uuid </strong>]: The uuid of the item that was picked up. Must be a block, part or tool.
+- <code>amount</code> [<strong> number </strong>]: The amount of the item that was picked up.
 
 ---
 
@@ -107,6 +132,10 @@ guiInterface:clearList( listName )
 <code>Client-Only</code> <br></br>
 
 Clears a list.
+
+:::info note
+Lists are currently not implemented for custom GUI layouts and do not work.
+:::
 
 <strong>Arguments:</strong> <br></br>
 
@@ -139,6 +168,15 @@ guiInterface:createDropDown( widgetName, functionName, options )
 
 Creates a dropdown menu at the specified widget.
 
+:::info note
+The given callback function is also called when [setSelectedDropDownItem](#setselecteddropdownitem) is used!
+:::
+
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>option</code> [<strong> string </strong>]: The option that was selected in the dropdown.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
@@ -157,6 +195,12 @@ guiInterface:createGridFromJson( gridName, data )
 
 Creates a grid from a table.
 
+<strong>Valid grid types are:</strong> <br></br>
+
+- <code>processGrid</code>
+- <code>materialGrid</code>
+- <code>itemGrid</code>
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
@@ -167,6 +211,8 @@ Creates a grid from a table.
 {
 	type = string,
 	layout = string,
+	itemTop = ???,
+	itemLeft = ???,
 	itemWidth = int,
 	itemHeight = int,
 	itemCount = int
@@ -183,6 +229,11 @@ guiInterface:createHorizontalSlider( widget, range, value, callback, enableNumbe
 <code>Client-Only</code> <br></br>
 
 Creates a horizontal slider with the specified widget.
+
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>newPos</code> [<strong> number </strong>]: The new position of the slider.
 
 <strong>Arguments:</strong> <br></br>
 
@@ -203,6 +254,11 @@ guiInterface:createVerticalSlider( widget, range, value, callback )
 <code>Client-Only</code> <br></br>
 
 Creates a vertical slider with the specified widget.
+
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>newPos</code> [<strong> number </strong>]: The new position of the slider.
 
 <strong>Arguments:</strong> <br></br>
 
@@ -294,7 +350,7 @@ Plays an effect at a widget inside a grid.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>gridName</code> [<strong> string </strong>]: The name of the grid.
-- <code>index</code> [<strong> int </strong>]: The index of the grid.
+- <code>index</code> [<strong> number </strong>]: The index of the grid.
 - <code>effectName</code> [<strong> string </strong>]: The name of the effect.
 - <code>restart</code> [<strong> bool </strong>]: Whether the effect should restart or not.
 
@@ -452,6 +508,14 @@ Sets a callback to be called when a button inside a grid is pressed
 Binds a Lua callback to a button widget inside a grid.
 The callback is called when the button widget is clicked.
 
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>buttonName</code> [<strong> string </strong>]: The name of the button that was clicked.
+- <code>index</code> [<strong> number </strong>]: The grid index of the button.
+- <code>itemData</code> [<strong> table </strong>]: Data set to the grid item using <code>setGridItem</code>.
+- <code>gridName</code> [<strong> string </strong>]: The name of the grid containing the button.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
@@ -473,7 +537,7 @@ Sets an item in a grid.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>gridName</code> [<strong> string </strong>]: The name of the grid.
-- <code>index</code> [<strong> int </strong>]: The item index.
+- <code>index</code> [<strong> number </strong>]: The item index.
 - <code>item</code> [<strong> table </strong>]: The item.
 
 ---
@@ -525,14 +589,14 @@ Sets the size of a grid.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>gridName</code> [<strong> string </strong>]: The name of the grid.
-- <code>size</code> [<strong> int </strong>]: The size.
+- <code>size</code> [<strong> number </strong>]: The size.
 
 ---
 
 ### setHost
 
 ```lua
-guiInterface:setHost( widget, host, joint )
+guiInterface:setHost( host, bone )
 ```
 <code>Client-Only</code> <br></br>
 
@@ -541,9 +605,8 @@ Sets the host for a world gui.
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
-- <code>widget</code> [<strong> string </strong>]: The name of the widget.
-- <code>host</code> [<strong> shape/character </strong>]: The GUI host.
-- <code>joint</code> [<strong> string </strong>]: The joint (optional).
+- <code>host</code> [<strong> Shape/Character </strong>]: The GUI host.
+- <code>bone</code> [<strong> string </strong>]: The animation bone to attach to. Optional.
 
 ---
 
@@ -608,6 +671,10 @@ guiInterface:setListSelectionCallback( listName, callback )
 <code>Client-Only</code> <br></br>
 
 Sets a callback to be called when a list selection is changed.
+
+:::info note
+Lists are currently not implemented for custom GUI layouts and do not work.
+:::
 
 <strong>Arguments:</strong> <br></br>
 
@@ -685,15 +752,22 @@ Sets if a world GUI requires line of sight to be visible.
 ### setSelectedDropDownItem
 
 ```lua
-guiInterface:setSelectedDropDownItem()
+guiInterface:setSelectedDropDownItem( name, item )
 ```
 <code>Client-Only</code> <br></br>
 
-[Missing Information]
+Selects an option in a dropdown menu.
+
+:::caution warning
+Using this function will also trigger the given dropdown's callback function. <br></br>
+If used wrong, this can create an infinite loop!
+:::
 
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
+- <code>name</code> [<strong> string </strong>]: The name of the dropdown menu's host widget.
+- <code>item</code> [<strong> string </strong>]: The dropdown item to select.
 
 ---
 
@@ -705,6 +779,10 @@ guiInterface:setSelectedListItem( listName, itemName )
 <code>Client-Only</code> <br></br>
 
 Selects an item in a list.
+
+:::info note
+Lists are currently not implemented for custom GUI layouts and do not work.
+:::
 
 <strong>Arguments:</strong> <br></br>
 
@@ -744,8 +822,8 @@ Sets the position and range of a slider.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>sliderName</code> [<strong> string </strong>]: The name of the slider.
-- <code>range</code> [<strong> unsigned_int </strong>]: The range of the slider.
-- <code>position</code> [<strong> unsigned_int </strong>]: The position of the slider.
+- <code>range</code> [<strong> number </strong>]: The range of the slider.
+- <code>position</code> [<strong> number </strong>]: The position of the slider.
 
 ---
 
@@ -762,7 +840,7 @@ Sets the position of a slider.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>sliderName</code> [<strong> string </strong>]: The name of the slider.
-- <code>position</code> [<strong> int </strong>]: The position of the slider.
+- <code>position</code> [<strong> number </strong>]: The position of the slider.
 
 ---
 
@@ -779,7 +857,7 @@ Sets the range of a slider.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>sliderName</code> [<strong> string </strong>]: The name of the slider.
-- <code>range</code> [<strong> int </strong>]: The range of the slider.
+- <code>range</code> [<strong> number </strong>]: The range of the slider.
 
 ---
 
@@ -796,7 +874,7 @@ Sets the range limit of a slider.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>sliderName</code> [<strong> string </strong>]: The name of the slider.
-- <code>limit</code> [<strong> int </strong>]: The range limit of the slider.
+- <code>limit</code> [<strong> number </strong>]: The range limit of the slider.
 
 ---
 
@@ -827,6 +905,12 @@ guiInterface:setTextAcceptedCallback( editBoxName, callback )
 Sets a callback to be called when a user submits <br></br>
 text into an EditBox widget.
 
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>name</code> [<strong> string </strong>]: The name of the TextBox that the text was entered into.
+- <code>text</code> [<strong> string </strong>]: The text that was submitted.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
@@ -843,6 +927,12 @@ guiInterface:setTextChangedCallback( editBoxName, callback )
 <code>Client-Only</code> <br></br>
 
 Sets a callback to be called when the text in an EditBox widget changes.
+
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>name</code> [<strong> string </strong>]: The name of the TextBox that the text was entered into.
+- <code>text</code> [<strong> string </strong>]: The new text in the TextBox.
 
 <strong>Arguments:</strong> <br></br>
 
@@ -917,7 +1007,7 @@ Stops an effect playing inside a grid.
 
 - <code>guiInterface</code> [<strong> guiInterface </strong>]: The guiInterface.
 - <code>gridName</code> [<strong> string </strong>]: The name of the grid.
-- <code>index</code> [<strong> int </strong>]: The grid index.
+- <code>index</code> [<strong> number </strong>]: The grid index.
 - <code>effect</code> [<strong> string </strong>]: The name of the effect.
 
 ---

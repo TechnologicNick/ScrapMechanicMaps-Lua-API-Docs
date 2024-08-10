@@ -21,10 +21,10 @@ The documentation is also available as a [JSON](/files/api_json.zip) and as a [L
 :::info note
 This documentation is for Scrap Mechanic Version <strong>0.6.0 or later</strong>.
 
-The <strong>previous documentation</strong> for Scrap Mechanic Version <strong>0.5.1</strong> can be found [here](https://scrapmechanicmaps.com/archive/Lua_051/).
+The <strong>previous documentation</strong> for Scrap Mechanic Version <strong>0.5.1</strong> can be found [here](https://scrapmechanictools.com/archive/Lua_051/).
 
-If you encounter any errors, malfunctions, broken links or missing information, please <br></br>
-report them in the [ScrapMechanicMaps Discord Server](https://discord.gg/2eACct5FDm).
+If you encounter any errors, malfunctions, broken links, missing or wrong information, please <br></br>
+**[report them as soon as possible!](https://scrapmechanictools.com/report_issues.html)**
 :::
 
 ### Console
@@ -148,13 +148,13 @@ The sandbox also makes sure no harmful code can be written in Lua by restricting
 The <strong>server</strong> side simulates the game world and communicates with all clients that are currently playing, including the host itself. <br></br>
 The server side is only running on the hosting player's computer. <br></br>
 
-In a script class, <strong>serverCallback</strong> implies that the the code will run in server mode and can only access functions marked as <strong>server</strong> or <strong>server and client</strong>. <br></br>
+In a script class, <strong>serverCallback</strong> implies that the code will run in server mode and can only access functions marked as <strong>server</strong> or <strong>server and client</strong>. <br></br>
 To check if a script is running in server mode at runtime you can also use [sm.isServerMode](/lua/Game-Script-Environment/Static-Functions/sm#isservermode). <br></br>
 
 ### Client
 The <strong>client</strong> is the part of Scrap Mechanic that a player sees and interacts with (e.g. graphics, audio, player input, etc.). <br></br>
 A client is running on every player's computer, including the host. <br></br>
 
-In a script class, <strong>clientCallback</strong> implies that the the code will run in server mode and can only access functions marked as <strong>client</strong> or <strong>server and client</strong>. <br></br>
+In a script class, <strong>clientCallback</strong> implies that the code will run in client mode and can only access functions marked as <strong>client</strong> or <strong>server and client</strong>. <br></br>
 
 

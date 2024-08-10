@@ -91,7 +91,7 @@ Returns the [dot product](https://en.wikipedia.org/wiki/Dot_product) of two vect
 ### length
 
 ```lua
-vec3:length( vector )
+vec3:length()
 ```
 
 Returns the length of the vector.
@@ -111,7 +111,7 @@ If you want the squared length, using [length2](#length2) is faster than squarin
 ### length2
 
 ```lua
-vec3:length2( vector )
+vec3:length2()
 ```
 
 Returns the squared length of the vector.

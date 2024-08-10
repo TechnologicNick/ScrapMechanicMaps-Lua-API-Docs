@@ -181,7 +181,7 @@ Value are integers 0-3 (Defaults to 0, no poses).
 
 A value greater that 0 indicates that the renderable's mesh is set up to blend into <code>pose0</code>, <code>pose1</code>, <code>pose2</code>. <br></br>
 
-- <code>highlightColor</code> [<strong> color </strong>]: The connection-point's normal color.
+- <code>poseWeightCount</code> [<strong> number </strong>]: The number of animation poses.
 
 ---
 
@@ -293,6 +293,21 @@ Indoor worlds have only one terrain cell, at <code>0, 0</code>
 
 ---
 
+<strong>isStatic</strong> <br></br>
+Sets whether the world is static or not.
+
+If a world is set to static, the entire terrain in it is loaded at once and the dynamic cell loading/unloading <br></br>
+(depending on render distance) system is disabled (meaning the entire world/terrain stays loaded at all times).
+
+:::caution warning
+Enabling this on a large/complex world can cause a massive loss of performance or even crash! <br></br>
+It is recommended to leave this disabled unless there is a reason to enable it.
+:::
+
+- <code>enable</code> [<strong> bool </strong>]: A boolean indicating whether the world is static or not.
+
+---
+
 <strong>renderMode</strong> <br></br>
 Sets the render mode for this world. <br></br>
 Default = "outdoor"
@@ -356,7 +371,7 @@ Filters can be combined by adding them. <br></br>
 	dynamicBody = 1,
 	staticBody = 2,
 	character = 4,
-	areatrigger = 8,
+	areaTrigger = 8,
 	harvestable = 512,
 	lift = 1024,
 	voxelTerrain = 32768,
@@ -538,36 +553,36 @@ The table of types that an interactable can be.
 
 ```lua title="Table Contents"
 {
-    "electricEngine",
-    "gasEngine",
-    "steering",
-    "seat",
-    "controller",
-    "button",
-    "lever",
-    "sensor",
-    "thruster",
-    "radio",
-    "horn",
-    "tone",
-    "logic",
-    "timer",
-    "particlePreview",
-    "spring",
-    "pointLight",
-    "spotLight",
-    "chest",
-    "itemStack",
-    "scripted",
-    "piston", 
-    "simpleInteractive",
-    "camera",
-    "waypoint",
-    "survivalThruster",
-    "survivalPiston",
-    "survivalSpring",
-    "survivalSequence",
-    "survivalSensor"
+	"electricEngine",
+	"gasEngine",
+	"steering",
+	"seat",
+	"controller",
+	"button",
+	"lever",
+	"sensor",
+	"thruster",
+	"radio",
+	"horn",
+	"tone",
+	"logic",
+	"timer",
+	"particlePreview",
+	"spring",
+	"pointLight",
+	"spotLight",
+	"chest",
+	"itemStack",
+	"scripted",
+	"piston",
+	"simpleInteractive",
+	"camera",
+	"waypoint",
+	"survivalThruster",
+	"survivalPiston",
+	"survivalSpring",
+	"survivalSequence",
+	"survivalSensor"
 }
 ```
 
@@ -642,39 +657,6 @@ Flags used with the steering component.
 
 ---
 
-### sm.interactable.steering
-	
-A table of available interactable types.
-
-```lua title="Table Contents"
-{
-"electricEngine",
-"gasEngine",
-"steering",
-"seat",
-"controller",
-"button",
-"lever",
-"sensor",
-"thruster",
-"radio",
-"horn",
-"tone",
-"logic",
-"timer",
-"particlePreview",
-"spring",
-"pointLight",
-"spotLight",
-"chest",
-"scripted",
-"piston",
-"simpleInteractive",
-}
-```
-
----
-
 ### sm.joint.types
 	
 A table of joint types.
@@ -708,17 +690,18 @@ A table of physics filter types used for things like [raycasts](/lua/Game-Script
 
 ```lua title="Table Contents"
 {
+    all = -1,
     dynamicBody = 1,
     staticBody = 2,
     character = 4,
     areaTrigger = 8,
+    terrainSurface = 128,
+    terrainAsset = 256,
+    harvestable = 512,
     joints = 4096,
-    terrainSurface = ?,
-    terrainAsset = ?,
-    harvestable = ?,
-    static = ?,
-    default = 6023,
-    all = -1
+    static = 34690,
+    default = 38791,
+    voxelTerrain = 32768,
 }
 ```
 

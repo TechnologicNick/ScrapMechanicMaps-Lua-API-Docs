@@ -16,7 +16,7 @@ Information about projectiles is located in <code>/Data/Projectiles/projectiles.
 ### customProjectileAttack
 
 ```lua
-sm.projectile.customProjectileAttack( userdata, name, damage, position, velocity, source, fakePosThird, fakePosFirst, delay )
+sm.projectile.customProjectileAttack( userdata, name_or_uuid, damage, position, velocity, source, fakePosThird, fakePosFirst, delay )
 ```
 <code>Server-Only</code> <br></br>
 
@@ -25,7 +25,7 @@ Performs a customized projectile attack from a player or unit.
 <strong>Arguments:</strong> <br></br>
 
 - <code>userdata</code> [<strong> table </strong>]: A table of custom user data.
-- <code>name</code> [<strong> string </strong>]: The projectile's name or uuid (<code>name</code> is deprecated, use uuid instead).
+- <code>name_or_uuid</code> [<strong> string/uuid </strong>]: The projectile's name or uuid (name is deprecated, use uuid instead).
 - <code>damage</code> [<strong> int </strong>]: The damage that the projectile will inflict.
 - <code>position</code> [<strong> vec3 </strong>]: The fire position.
 - <code>velocity</code> [<strong> vec3 </strong>]: The direction and velocity.
@@ -39,14 +39,14 @@ Performs a customized projectile attack from a player or unit.
 ### getProjectileMass
 
 ```lua
-sm.projectile.getProjectileMass( name )
+sm.projectile.getProjectileMass( name_or_uuid )
 ```
 
 Returns the mass of the projectile.
 
 <strong>Arguments:</strong> <br></br>
 
-- <code>name</code> [<strong> string </strong>]: The projectile's name or uuid (<code>name</code> is deprecated, use uuid instead).
+- <code>name_or_uuid</code> [<strong> string/uuid </strong>]: The projectile's name or uuid (name is deprecated, use uuid instead).
 
 <strong>Returns:</strong> <br></br>
 
@@ -57,7 +57,7 @@ Returns the mass of the projectile.
 ### harvestableCustomProjectileAttack
 
 ```lua
-sm.projectile.harvestableCustomProjectileAttack( userdata, name, damage, position, velocity, source, delay )
+sm.projectile.harvestableCustomProjectileAttack( userdata, name_or_uuid, damage, position, velocity, source, delay )
 ```
 <code>Server-Only</code> <br></br>
 
@@ -66,7 +66,7 @@ Performs a customized projectile attack from a harvestable.
 <strong>Arguments:</strong> <br></br>
 
 - <code>userdata</code> [<strong> table </strong>]: A table of custom user data.
-- <code>name</code> [<strong> string </strong>]: The projectile's name or uuid (<code>name</code> is deprecated, use uuid instead).
+- <code>name_or_uuid</code> [<strong> string/uuid </strong>]: The projectile's name or uuid (name is deprecated, use uuid instead).
 - <code>damage</code> [<strong> int </strong>]: The damage that the projectile will inflict.
 - <code>position</code> [<strong> vec3 </strong>]: The fire position.
 - <code>velocity</code> [<strong> vec3 </strong>]: The direction and velocity.
@@ -78,14 +78,14 @@ Performs a customized projectile attack from a harvestable.
 ### harvestableProjectileAttack
 
 ```lua
-sm.projectile.harvestableProjectileAttack( name, damage, position, velocity, source, delay )
+sm.projectile.harvestableProjectileAttack( name_or_uuid, damage, position, velocity, source, delay )
 ```
 
 Performs a projectile attack from a harvestable.
 
 <strong>Arguments:</strong> <br></br>
 
-- <code>name</code> [<strong> string </strong>]: The projectile's name or uuid (<code>name</code> is deprecated, use uuid instead).
+- <code>name_or_uuid</code> [<strong> string/uuid </strong>]: The projectile's name or uuid (name is deprecated, use uuid instead).
 - <code>damage</code> [<strong> int </strong>]: The damage that the projectile will inflict.
 - <code>position</code> [<strong> vec3 </strong>]: The fire position.
 - <code>velocity</code> [<strong> vec3 </strong>]: The direction and velocity.
@@ -97,7 +97,7 @@ Performs a projectile attack from a harvestable.
 ### playerFire
 
 ```lua
-sm.projectile.playerFire( name, position, velocity, fakePosThird, fakePosFirst, delay )
+sm.projectile.playerFire( name_or_uuid, position, velocity, fakePosThird, fakePosFirst, delay )
 ```
 <code>Client-Only</code> <br></br>
 
@@ -108,7 +108,7 @@ but due to the weapon being held off-center it may require a fake position for w
 
 <strong>Arguments:</strong> <br></br>
 
-- <code>name</code> [<strong> string </strong>]: The projectile's name or uuid (<code>name</code> is deprecated, use uuid instead).
+- <code>name_or_uuid</code> [<strong> string/uuid </strong>]: The projectile's name or uuid (name is deprecated, use uuid instead).
 - <code>position</code> [<strong> vec3 </strong>]: The fire position.
 - <code>velocity</code> [<strong> vec3 </strong>]: The direction and velocity.
 - <code>fakePosThird</code> [<strong> vec3 </strong>]: The visual start position in third-person. Defaults to position.
@@ -120,14 +120,14 @@ but due to the weapon being held off-center it may require a fake position for w
 ### projectileAttack
 
 ```lua
-sm.projectile.projectileAttack( name, damage, position, velocity, source, fakePosThird, fakePosFirst )
+sm.projectile.projectileAttack( name_or_uuid, damage, position, velocity, source, fakePosThird, fakePosFirst )
 ```
 
 Performs a projectile attack from a player or unit.
 
 <strong>Arguments:</strong> <br></br>
 
-- <code>name</code> [<strong> string </strong>]: The projectile's name or uuid (<code>name</code> is deprecated, use uuid instead).
+- <code>name_or_uuid</code> [<strong> string/uuid </strong>]: The projectile's name or uuid (name is deprecated, use uuid instead).
 - <code>damage</code> [<strong> int </strong>]: The damage that the projectile will inflict.
 - <code>position</code> [<strong> vec3 </strong>]: The fire position.
 - <code>velocity</code> [<strong> vec3 </strong>]: The direction and velocity.
@@ -140,7 +140,7 @@ Performs a projectile attack from a player or unit.
 ### shapeCustomProjectileAttack
 
 ```lua
-sm.projectile.shapeCustomProjectileAttack( userdata, name, damage, position, velocity, source, delay )
+sm.projectile.shapeCustomProjectileAttack( userdata, name_or_uuid, damage, position, velocity, source, delay )
 ```
 <code>Server-Only</code> <br></br>
 
@@ -149,7 +149,7 @@ Performs a customized projectile attack from a shape.
 <strong>Arguments:</strong> <br></br>
 
 - <code>userdata</code> [<strong> table </strong>]: A table of custom user data.
-- <code>name</code> [<strong> string </strong>]: The projectile's name or uuid (<code>name</code> is deprecated, use uuid instead).
+- <code>name_or_uuid</code> [<strong> string/uuid </strong>]: The projectile's name or uuid (name is deprecated, use uuid instead).
 - <code>damage</code> [<strong> int </strong>]: The damage that the projectile will inflict.
 - <code>position</code> [<strong> vec3 </strong>]: The fire position.
 - <code>velocity</code> [<strong> vec3 </strong>]: The direction and velocity.
@@ -161,7 +161,7 @@ Performs a customized projectile attack from a shape.
 ### shapeFire
 
 ```lua
-sm.projectile.shapeFire( source, name, damage, position, velocity, delay )
+sm.projectile.shapeFire( source, name_or_uuid, damage, position, velocity, delay )
 ```
 <code>Server-Only</code> <br></br>
 
@@ -170,7 +170,7 @@ Creates and fires a projectile from a Shape.
 <strong>Arguments:</strong> <br></br>
 
 - <code>source</code> [<strong> shape </strong>]: The source of the projectile.
-- <code>name</code> [<strong> string </strong>]: The projectile's name or uuid (<code>name</code> is deprecated, use uuid instead).
+- <code>name_or_uuid</code> [<strong> string/uuid </strong>]: The projectile's name or uuid (name is deprecated, use uuid instead).
 - <code>damage</code> [<strong> int </strong>]: The damage that the projectile will inflict.
 - <code>position</code> [<strong> vec3 </strong>]: The fire position.
 - <code>velocity</code> [<strong> vec3 </strong>]: The direction and velocity.
@@ -181,14 +181,18 @@ Creates and fires a projectile from a Shape.
 ### shapeProjectileAttack
 
 ```lua
-sm.projectile.shapeProjectileAttack( name, damage, position, velocity, source, delay )
+sm.projectile.shapeProjectileAttack( name_or_uuid, damage, position, velocity, source, delay )
 ```
 
 Performs a projectile attack.
 
+:::info note
+The fire position is <strong>local to the given shape</strong>.
+:::
+
 <strong>Arguments:</strong> <br></br>
 
-- <code>name</code> [<strong> string </strong>]: The projectile's name or uuid (<code>name</code> is deprecated, use uuid instead).
+- <code>name_or_uuid</code> [<strong> string/uuid </strong>]: The projectile's name or uuid (name is deprecated, use uuid instead).
 - <code>damage</code> [<strong> int </strong>]: The damage that the projectile will inflict.
 - <code>position</code> [<strong> vec3 </strong>]: The fire position.
 - <code>velocity</code> [<strong> vec3 </strong>]: The direction and velocity.

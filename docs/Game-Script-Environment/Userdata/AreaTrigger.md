@@ -37,7 +37,8 @@ AreaTrigger:bindOnEnter( callback, object = nil )
 Binds an area trigger's <code>onEnter</code> event to a custom callback. <br></br> <br></br>
 The <code>onEnter</code> event is triggered when an object enters the trigger area.
 
-The callback receives:
+<strong>The callback receives:</strong> <br></br>
+
 - <code>self</code> [<strong> table </strong>]: The class instance.
 - <code>trigger</code> [<strong> AreaTrigger </strong>]: The area trigger instance.
 - <code>results</code> [<strong> table </strong>]: A table of objects that entered the trigger area.
@@ -77,7 +78,8 @@ AreaTrigger:bindOnExit( callback, object = nil )
 Binds an area trigger's <code>onExit</code> event to a custom callback. <br></br>
 The <code>onExit</code> event is triggered when an object leaves the trigger area.
 
-The callback receives:
+<strong>The callback receives:</strong> <br></br>
+
 - <code>self</code> [<strong> table </strong>]: The class instance.
 - <code>trigger</code> [<strong> AreaTrigger </strong>]: The area trigger instance.
 - <code>results</code> [<strong> table </strong>]: A table of objects that left the trigger area.
@@ -117,7 +119,8 @@ AreaTrigger:bindOnStay( callback, object = nil )
 Binds an area trigger's <code>onStay</code> event to a custom callback. <br></br>
 The <code>onStay</code> event is triggered every tick as long as an object is staying inside of the trigger area.
 
-The callback receives:
+<strong>The callback receives:</strong> <br></br>
+
 - <code>self</code> [<strong> table </strong>]: The class instance.
 - <code>trigger</code> [<strong> AreaTrigger </strong>]: The area trigger instance.
 - <code>results</code> [<strong> table </strong>]: A table of objects that are in the trigger area.
@@ -155,11 +158,53 @@ AreaTrigger:bindOnProjectile( callback, object = nil )
 Binds an area trigger's <code>onProjectile</code> event to a custom callback. <br></br>
 The <code>onProjectile</code> event is triggered if a projectile collides with the trigger area.
 
+<strong>The callback receives:</strong> <br></br>
+
+- <code>self</code> [<strong> table </strong>]: The class instance.
+- <code>trigger</code> [<strong> AreaTrigger </strong>]: The area trigger instance.
+- <code>position</code> [<strong> vec3 </strong>]: The position in world space where the projectile hit the trigger.
+- <code>airTime</code> [<strong> number </strong>]: The time, in seconds, that the projectile spent flying before the hit.
+- <code>velocity</code> [<strong> vec3 </strong>]: The velocity of the projectile at impact.
+- <code>projectileName</code> [<strong> string </strong>]: The name of the projectile. (Legacy, use uuid instead)
+- <code>shooter</code> [<strong> player/unit/shape/harvestable/nil </strong>]: The shooter. Can be a Player, Unit, Shape, Harvestable or nil if unknown.
+- <code>damage</code> [<strong> int </strong>]: The damage value of the projectile.
+- <code>customData</code> [<strong> any </strong>]: A Lua object that can be defined at shoot time using <code>sm.projectile.customProjectileAttack</code> or any other custom version.
+- <code>normal</code> [<strong> vec3 </strong>]: The normal at the point of impact.
+- <code>uuid</code> [<strong> uuid </strong>]: The uuid of the projectile.
+
+<strong>The callback must return:</strong> <br></br>
+
+- [<strong> bool </strong>]: Whether the projectile should be erased or not. <code>true</code> = erase the projectile, <code>false</code> = keep the projectile.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>AreaTrigger</code> [<strong> AreaTrigger </strong>]: The AreaTrigger.
 - <code>callback</code> [<strong> string </strong>]: 	The name of the Lua function to bind.
 - <code>object</code> [<strong> table </strong>]: The object that will receive the callback. (optional)
+
+```lua title="Example Usage"
+MyClass = class()
+
+function MyClass.server_onCreate( self )
+    local position = self.shape:getWorldPosition()
+    local size = sm.vec3.new( 1, 1, 1 )
+
+    self.myTrigger = sm.areaTrigger.createBox( size, position )
+    self.myTrigger:bindOnProjectile( "onProjectile" )
+end
+
+function MyClass.onProjectile( self, trigger, position, airTime, velocity, projectileName, shooter, damage, customData, normal, uuid )
+    print( "Detected projectile!" )
+	print( "Trigger:", trigger )
+	print( "World Position:", position )
+	print( "Time spent flying:", airTime, "seconds" )
+	print( "Velocity:", velocity )
+	print( "Shooter:", shooter )
+	print( "Damage:", damage )
+
+	return true	--true or false, true = the projectile stays, false = the projectile is erased
+end
+```
 
 ---
 

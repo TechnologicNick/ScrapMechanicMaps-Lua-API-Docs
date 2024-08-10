@@ -53,10 +53,10 @@ Quadratic Bezier interpolation. One dimensional bezier curve.
 
 ---
 
-### bezier2
+### bezier3
 
 ```lua
-sm.util.bezier2( c0, c1, c2, c3, t )
+sm.util.bezier3( c0, c1, c2, c3, t )
 ```
 
 Cubic Bezier interpolation. One dimensional bezier curve.

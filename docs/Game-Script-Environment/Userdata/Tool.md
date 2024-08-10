@@ -31,6 +31,19 @@ tool:getAnimationInfo( name )
 
 Returns general information for a third person view animation.
 
+The <code>name</code> and <code>looping</code> properties are extracted from the animation JSON data:
+
+```json
+{
+	"name": "my_animation",	//the 'name' in the returned table
+	"file": "$CONTENT_DATA/Tools/Animations/my_animation.dae",
+	"looping": true	//the 'looping' property in the returned table
+}
+```
+The <code>duration</code> property is extracted from the animation.dae file specified in the animation JSON.
+
+This function may return <code>nil</code> if it fails to get the animation info.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>tool</code> [<strong> tool </strong>]: The tool.
@@ -90,11 +103,24 @@ Returns the player's view/aim direction.
 ### getFpAnimationInfo
 
 ```lua
-tool:getFpAnimationInfo()
+tool:getFpAnimationInfo( name )
 ```
 <code>Client-Only</code> <br></br>
 
 Returns general information for a first person view animation.
+
+The <code>name</code> and <code>looping</code> properties are extracted from the animation JSON data:
+
+```json
+{
+	"name": "my_animation",	//the 'name' in the returned table
+	"file": "$CONTENT_DATA/Tools/Animations/my_animation.dae",
+	"looping": true	//the 'looping' property in the returned table
+}
+```
+The <code>duration</code> property is extracted from the animation.dae file specified in the animation JSON.
+
+This function may return <code>nil</code> if it fails to get the animation info.
 
 <strong>Arguments:</strong> <br></br>
 
@@ -249,6 +275,26 @@ This is the direction the player wants to move based on movement input.
 <strong>Returns:</strong> <br></br>
 
 - [<strong> vec3 </strong>]: The player's relative movement direction.
+
+---
+
+### getSmoothDirection
+
+```lua
+tool:getSmoothDirection()
+```
+<code>Client-Only</code> <br></br>
+
+Provides a smoother way of getting the direction of the player <br></br>
+holding the tool while playing in multiplayer.
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>tool</code> [<strong> tool </strong>]: The tool.
+
+<strong>Returns:</strong> <br></br>
+
+- [<strong> Vec3 </strong>]: The player's direction.
 
 ---
 
@@ -684,7 +730,4 @@ Updates the currently set third person view movement animation for the tool.
 - <code>weight</code> [<strong> number </strong>]: The weight.
 
 ---
-
-
-
 

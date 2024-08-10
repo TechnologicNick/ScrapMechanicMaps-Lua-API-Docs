@@ -27,9 +27,14 @@ A userdata object representing a <strong>character</strong> in the game.
 	- <code>Set</code>: (Server-Only) Sets the character's color.
 
 
-- <code>direction</code> [<strong> vec3 </strong>] <br></br>
+- <code>direction</code> [<strong> Vec3 </strong>] <br></br>
 
 	- <code>Get</code>: The character's view/aim direction.
+	
+
+- <code>smoothDirection</code> [<strong> Vec3 </strong>] <br></br>
+
+	- <code>Get</code>: The view/aim direction, smoother in multiplayer.
 
 
 - <code>id</code> [<strong> int </strong>] <br></br>
@@ -274,6 +279,25 @@ character:getDirection()
 ```
 
 Returns the direction in which the character is viewing or aiming.
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>character</code> [<strong> character </strong>]: The character.
+
+<strong>Returns:</strong> <br></br>
+
+- [<strong> vec3 </strong>]: The character's view direction.
+
+---
+
+### getSmoothViewDirection
+
+```lua
+character:getSmoothViewDirection()
+```
+
+Returns the direction in which the character is viewing or aiming, in a smoother <br></br>
+way when playing in multiplayer.
 
 <strong>Arguments:</strong> <br></br>
 

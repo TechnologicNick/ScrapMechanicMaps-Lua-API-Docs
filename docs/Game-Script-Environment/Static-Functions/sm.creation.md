@@ -114,3 +114,26 @@ If the blueprint was not exported with transforms, the importer will treat it as
 - [<strong> table </strong>]: A table of bodies created from the blueprint.
 
 ---
+
+### buildBlueprintShape
+
+```lua
+sm.creation.buildBlueprintShape( shapeUuid, position, rotation, localPosition, meshRotation )
+```
+
+Unknown function, is referenced in the scripts but does not actually exist in the API. <br></br>
+Very likely unreleased Chapter 2 content.
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>shapeUuid</code> [<strong> Uuid </strong>]: The blueprint shape uuid.
+- <code>position</code> [<strong> Vec3 </strong>]: The world position of the shape.
+- <code>rotation</code> [<strong> Quat </strong>]: The world rotation of the shape.
+- <code>localPosition</code> [<strong>Vec3 </strong>]: The local position of the shape.
+- <code>meshRotation</code> [<strong> Quat </strong>]: The local rotation of the shape.
+
+<strong>Returns:</strong> <br></br>
+
+- [<strong> Unknown </strong>]: [unknown]
+
+---

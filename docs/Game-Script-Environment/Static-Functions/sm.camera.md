@@ -229,7 +229,7 @@ sm.camera.setCameraState( state )
 ```
 <code>Client-Only</code> <br></br>
 
-Sets the camera's control state, see [sm.camera.states](/lua/Game-Script-Environment/Constants#smcamerastates).
+Sets the camera's control state, see [sm.camera.state](/lua/Game-Script-Environment/Constants#smcamerastate).
 
 <strong>Arguments:</strong> <br></br>
 

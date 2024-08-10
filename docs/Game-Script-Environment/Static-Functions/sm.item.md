@@ -70,10 +70,14 @@ Returns the shape's feature data.
 ### getInteractablesUuidsOfType
 
 ```lua
-sm.item.getInteractablesUuidsOfType()
+sm.item.getInteractablesUuidsOfType( interactableType )
 ```
 
 Returns a table of all interactable uuids of an interactable type.
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>interactableType</code> [<strong> string </strong>]: The interactable type name.
 
 <strong>Returns:</strong> <br></br>
 
@@ -211,6 +215,9 @@ sm.item.isHarvestablePart( uuid )
 
 Returns whether the uuid belongs to a harvestable shape.
 
+This is the case when the tested shape uuid belongs to a part that has the <code>"harvestablePart"</code> property <br></br>
+set to <code>true</code> in its shapeset JSON entry.
+
 <strong>Arguments:</strong> <br></br>
 
 - <code>uuid</code> [<strong> uuid </strong>]: The item uuid.
@@ -275,6 +282,22 @@ Returns whether the item is a tool or not.
 
 ---
 
+### isBlueprintShape
 
+```lua
+sm.item.isBlueprintShape( uuid )
+```
+
+Returns whether the item is a blueprint shape or not.
+
+<strong>Arguments:</strong> <br></br>
+
+- <code>uuid</code> [<strong> uuid </strong>]: The item uuid.
+
+<strong>Returns:</strong> <br></br>
+
+- [<strong> bool </strong>]: Whether the item is a blueprint shape or not.
+
+---
 
 

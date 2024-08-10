@@ -37,7 +37,7 @@ This is useful for checking whether a reference to an object is valid.
 ### isServerMode
 
 ```lua
-sm.isServerMode( object )
+sm.isServerMode()
 ```
 
 Returns whether the script is currently running in [server](/lua/#server) mode. <br></br>

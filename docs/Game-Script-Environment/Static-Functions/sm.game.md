@@ -245,7 +245,9 @@ sm.game.setEnableRestrictions( state )
 ```
 <code>Server-Only</code> <br></br>
 
-Sets the restriction state. If true, restrictions will apply to the world.
+Sets the state of creation restrictions. <br></br>
+If true, restrictions (such as [Body:setBuildable](/lua/Game-Script-Environment/Userdata/Body#setbuildable)) will apply. <br></br>
+If false, all restrictions will default to disabled.
 
 <strong>Arguments:</strong> <br></br>
 

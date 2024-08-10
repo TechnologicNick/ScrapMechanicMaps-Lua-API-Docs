@@ -143,8 +143,8 @@ Creates a part on the body.
 - <code>body</code> [<strong> body </strong>]: The body.
 - <code>uuid</code> [<strong> uuid </strong>]: 	The uuid of the shape.
 - <code>position</code> [<strong> vec3 </strong>]: The shape's local position.
-- <code>z-axis</code> [<strong> bool </strong>]: The shape's local z direction.
-- <code>x-axis</code> [<strong> bool </strong>]: The shape's local x direction.
+- <code>z-axis</code> [<strong> Vec3 </strong>]: The shape's local z direction.
+- <code>x-axis</code> [<strong> Vec3 </strong>]: The shape's local x direction.
 - <code>forceAccept</code> [<strong> bool </strong>]: Set true to force the body to accept the shape. (Defaults to true)
 
 <strong>Returns:</strong> <br></br>

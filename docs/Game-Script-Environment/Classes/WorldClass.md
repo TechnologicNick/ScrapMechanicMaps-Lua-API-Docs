@@ -40,6 +40,7 @@ The fields below are accessed using <code>self.fieldName</code> in the WorldClas
 [enableSurface](/Game-Script-Environment/Constants#worldclass) <br></br>
 [groundMaterialSet](/Game-Script-Environment/Constants#worldclass) <br></br>
 [isIndoor](/Game-Script-Environment/Constants#worldclass) <br></br>
+[isStatic](/Game-Script-Environment/Constants#worldclass) <br></br>
 [renderMode](/Game-Script-Environment/Constants#worldclass) <br></br>
 [terrainScript](/Game-Script-Environment/Constants#worldclass) <br></br>
 [worldBorder](/Game-Script-Environment/Constants#worldclass) <br></br>
